@@ -1,13 +1,13 @@
 package eurocopa;
-class Partido{}
+
 //reemplazar clase partido por la clase cuando esté creada.
 public class Ronda {
         public static void main(String[] args) {
         }
         private String nroronda;
-        private Partido[] partidos;
+        private Partidos[] partidos;
 
-        public void ronda(String nrindividual, Partido[] partidoindividual){
+        public void ronda(String nrindividual, Partidos[] partidoindividual){
          //crea cada instancia individual
             nroronda = nrindividual;
             partidos = partidoindividual;
@@ -16,7 +16,7 @@ public class Ronda {
             return nroronda;
         //se lee nr de ronda
         }
-        public Partido[] getpartido(){
+        public Partidos[] getpartido(){
              return partidos;
         //se lee nr de partido
         }

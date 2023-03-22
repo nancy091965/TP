@@ -4,6 +4,7 @@ public class Equipos {
 	
 	
 	    private int Id;
+		// el ejercicio no pide este ID. No será mejor sacarlo?
 	    private String Nombre;
 	    private String Descripcion;
 	    
@@ -11,8 +12,8 @@ public class Equipos {
 	    public Equipos ( String nuevoNombreX, String descripcionx, int Id) {
 		
 	   
-	    	 this.Nombre= Nombre;
-	    	 this.Descripcion= Descripcion;	
+	    	 this.Nombre= nuevoNombreX;
+	    	 this.Descripcion= descripcionx;
 	    	 this.Id= Id;
 	  }
  //METODO PARA OBTENER EL ID DEL EQUIPO
