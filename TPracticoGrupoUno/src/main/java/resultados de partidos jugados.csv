@@ -1,7 +1,7 @@
-Ronda, Equipo local, Cant goles local, Cant goles visitante, Equipo visitante
-1 ,España,3,4,Alemania
-1 ,Italia,2,5,francia
-1 ,España,2,2,Italia
-2 ,Francia,4,1,España
-2 ,Alemania,2,2,Italia
-2 ,Francia,3,2,Alemania
+Ronda, Local, Cantgoleslocal, Cantgolesvisitante, Visitante
+1 ,E1,3,4,E2
+1 ,E3,2,5,E4
+1 ,E1,2,2,E3
+2 ,E4,4,1,E1
+2 ,E2,2,2,E3
+2 ,E4,3,2,E2
