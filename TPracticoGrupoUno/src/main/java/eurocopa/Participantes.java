@@ -1,18 +1,17 @@
 package eurocopa;
 
 public class Participantes {
-	
 
 	private String nombre;
 	private String apellido;
-	private String direccionMail;
+	private String idParticipante;
 	
-	public Participantes(String nombre, String apellido, String direccionMail ) {
+	
+	
+	public Participantes(String nombre, String apellido, String idParticipante ) {
 		this.nombre = nombre;
 		this.apellido = apellido;
-		this.direccionMail = direccionMail;
-	
-	}
+		this.idParticipante=idParticipante;}
  
 	public String getNombre() {
 		return nombre;
@@ -30,21 +29,17 @@ public class Participantes {
 		this.apellido = apellido;
 	}
  
-	public String getDireccionMail() {
-		return direccionMail;
+	public String getidParticipante() {
+		return idParticipante;
 	}
  
 	public void setDireccion(String direccion) {
-		this.direccionMail = direccionMail;
+		this.idParticipante=idParticipante;
 		
 	
 	}
 
 	
-	}
- 
+	} 
 	
- 
 	
-
-
