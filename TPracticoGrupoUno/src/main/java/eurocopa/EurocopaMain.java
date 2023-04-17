@@ -23,8 +23,30 @@ public class EurocopaMain {
    
     for(String lineaResultado:lineasResultados){
     
-	System.out.println (lineaResultado);
-       
-    }
+	System.out.println (lineaResultado);}
+
+   
+
+
+// Leer pronostico
+	
+	Path pathApuestas= Paths.get ("src/test/resources/pronosticos de participantes.csv");
+	List <String> lineasApuestas = null; 
+	
+	try {
+		lineasApuestas = Files.readAllLines (pathApuestas);
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		System.out.println ("no se puede leer");
+		System.exit(1);
+	}
+	for (String lineaApuesta:lineasApuestas) {
+   System.out.println (lineaApuesta);
+		
+	}
+	// total puntos pesona
+
 	}
 }
+
+
