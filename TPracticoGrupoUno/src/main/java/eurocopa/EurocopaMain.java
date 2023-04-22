@@ -80,7 +80,7 @@ public class EurocopaMain {
 		} else {
 			String[] campos = lineaPronostico.split(",");
 			Equipos equipo1 = new Equipos(campos[1]);
-			Equipos equipo2 = new Equipos(campos[4]);
+			Equipos equipo2 = new Equipos(campos[5]);
 			Partidos partido = null;
 
 			for (Partidos partidoCol : partidos) {
