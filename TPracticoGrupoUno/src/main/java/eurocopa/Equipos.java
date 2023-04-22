@@ -9,12 +9,10 @@ public class Equipos {
 	    private String Descripcion;
 	    
         //Genero un metodo constructor
-	    public Equipos ( String nuevoNombreX, String descripcionx, int Id) {
-		
-	   
-	    	 this.Nombre= nuevoNombreX;
-	    	 this.Descripcion= descripcionx;
-	    	 this.Id= Id;
+	    public Equipos ( String nombre ) {
+		super ();
+	    	 this.Nombre=nombre;
+	    	
 	  }
  //METODO PARA OBTENER EL ID DEL EQUIPO
 		public int getId() {

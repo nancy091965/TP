@@ -1,23 +1,45 @@
 package eurocopa;
 
+
+
 public class Pronostico {
+	
+	private Partidos partido;
+	private Equipos equipo;
+	private EnumResultado  resultado;
 
-  class Partido {
-  }
 
-  public static void main(String[] args) {
-  }
+	public Pronostico(Partidos partido, Equipos equipo, EnumResultado resultado) {
+		super();
+		this.partido = partido;
+		this.equipo = equipo;
+		this.resultado = resultado;
+	}
+			
 
-  private Partido[] partidos;
-  private Equipos[] equipo;
-  private ResultadoEnum[] resultado;
+	public Partidos getPartido() {
+		return partido;
+	}
 
-  public int puntos() {
+	public Equipos getEquipo() {
+		return equipo;
+	}
 
-    int suma = 0;
+	public EnumResultado getResultado() {
+		return resultado;
+	}
 
-    //recorrer partidos
+	public int puntos() {
+		//resultado=apuesta
+		EnumResultado resultadoReal=this. partido.resultado (this.equipo);
+		
+	  if (this.resultado.equals( resultadoReal)) {
+		  return 1;
+	  }else	 {
+		   
+	return 0;
+		}
 
-    return suma;
-  }
+	}
 }
+
