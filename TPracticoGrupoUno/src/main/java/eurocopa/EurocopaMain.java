@@ -1,4 +1,5 @@
 package eurocopa;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -12,7 +13,7 @@ import java.util.List;
 
 public class EurocopaMain {
   
-	public static void main(String[] args) {
+	public static void  main(String[] args) {
 //LEEMOS LOS RESULTADOS
   Collection <Partidos> partidos= new ArrayList <Partidos> ();
     	Path pathResultados = Paths.get("src/test/resources/resultados de partidos jugados.csv" );
@@ -107,7 +108,7 @@ public class EurocopaMain {
 				equipo = equipo1;
 				resultado = EnumResultado.PERDEDOR;
 			}
-			Pronostico pronostico = new Pronostico(partido,equipo,  resultado);
+			Pronostico pronostico = new Pronostico(partido, equipo,  resultado);
 			// sumar los puntos correspondientes
 			puntos += pronostico.puntos();
 		}

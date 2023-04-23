@@ -31,9 +31,9 @@ public class Pronostico {
 
 	public int puntos() {
 		//resultado=apuesta
-		EnumResultado resultadoReal=this. partido.resultado (this.equipo);
+		EnumResultado resultadoReal=partido.resultado (this.equipo);
 		
-	  if (this.resultado.equals( resultadoReal)) {
+	  if (this.resultado.equals(resultadoReal)) {
 		  return 1;
 	  }else	 {
 		   
