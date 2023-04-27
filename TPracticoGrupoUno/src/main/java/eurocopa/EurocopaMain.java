@@ -9,7 +9,7 @@ import java.util.Collection;
 import java.util.List;
 
 
-
+import java.sql.Connection; 
 
 
 
@@ -45,9 +45,9 @@ public class EurocopaMain {
 			partido.setGolesEq2(Integer.parseInt(campos[3]));
 		     partidos.add(partido);
 		}
-	System.out.println (lineaResultado);
+    	System.out.println (lineaResultado);
     }
-    
+    System.out.println("");
     
     //LECTURA DE PARTICIPANTES
     
@@ -99,6 +99,8 @@ public class EurocopaMain {
 	for (String lineaApuesta:lineasApuestas) {
 		System.out.println (lineaApuesta);
 	}	
+	
+	System.out.println("");
 	
 	  // vamos a calcular los puntos
 	
@@ -195,14 +197,11 @@ public class EurocopaMain {
 		 
 		}
 	
+	System.out.println("\n Esta es la lista de participantes para una futura versión. Descargada de una base SQL en servidor propio\n");
 	
-
-	}
-
-
-	
-	
-	/*String servidor = "www.educando.net.ar:3306"; String baseDatos = "vpvejznx_ariatech";			String usuario = "vpvejznx_argentina-programa";
+	String servidor = "www.educando.net.ar:3306"; 
+	String baseDatos = "vpvejznx_ariatech";
+	String usuario = "vpvejznx_argentina-programa";
 	String clave = "Estoesunabddeprueba!";
 	String url = "jdbc:mysql://" + servidor + "/" +baseDatos+
 			"?serverTimezone=America/Argentina/Buenos_Aires";
@@ -230,8 +229,10 @@ public class EurocopaMain {
 		System.out.println("SQLException: " + ex.getMessage());
 		System.out.println("SQLState: " + ex.getSQLState());
 		System.out.println("VendorError: " + ex.getErrorCode());
-	}*/
+	}
 
-    }
+
+}
+}
 
 	
