@@ -9,7 +9,7 @@ public class Participantes {
 	
 	
 	
-	public Participantes(String nombre, String apellido, String idParticipante ) {
+	public Participantes(String idParticipante, String nombre, String apellido ) {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.idParticipante=idParticipante;}

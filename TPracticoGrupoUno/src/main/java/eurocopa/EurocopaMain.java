@@ -8,7 +8,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import java.sql.Connection;
+
+
 
 
 
@@ -50,7 +51,7 @@ public class EurocopaMain {
     
     //LECTURA DE PARTICIPANTES
     
-    Collection <Participantes> partic= new ArrayList <Participantes> ();
+    ArrayList <Participantes> partic= new ArrayList <Participantes> ();
 	Path pathParticipantes = Paths.get("src/main/java/Participantes.csv" );
 	List<String> lineasPartic=null;
 	try {
@@ -72,17 +73,18 @@ public class EurocopaMain {
 			String[] campos = lineaPartic.split(",");
 			Participantes Part  = new Participantes(campos[0], campos[1], campos[2]);
 			partic.add(Part);
+			
 		}
-		
-		System.out.println (lineaPartic);
-
+			
 	}
+	
+	
     
     
     
 
  // Leemos pronosticos de participantes 
-/*    int puntosid = 0;
+    
 	Path pathApuestas= Paths.get ("src/test/resources/pronosticos de participantes.csv");
 	List <String> lineasApuestas = null; 
 	
@@ -93,15 +95,19 @@ public class EurocopaMain {
 		System.out.println ("no se puede leer");
 		System.exit(1);		
 	}
-	/*for (String lineaApuesta:lineasApuestas) {
+	
+	for (String lineaApuesta:lineasApuestas) {
 		System.out.println (lineaApuesta);
-	}*/	
+	}	
 	
 	  // vamos a calcular los puntos
 	
-	int puntosid = 0; // total puntos por persona
+	 // total puntos por persona
+	
+	ArrayList <Pronostico> pron = new ArrayList <Pronostico> ();
 	Path pathPronostico = Paths.get("src/test/resources/pronosticos de participantes.csv");
 	List<String> lineasPronostico = null;
+
 	try {
 		lineasPronostico = Files.readAllLines(pathPronostico);
 	} catch (IOException e) {
@@ -109,6 +115,8 @@ public class EurocopaMain {
 		System.out.println(e.getMessage());
 		System.exit(1);
 	}
+	
+	
 	primera = true;
 	for (String lineaPronostico : lineasPronostico) {
 		if (primera) {
@@ -119,6 +127,7 @@ public class EurocopaMain {
 			Equipos equipo1 = new Equipos(campos[1]);
 			Equipos equipo2 = new Equipos(campos[5]);
 			Partidos partido = null;
+			
 
 			for (Partidos partidoCol : partidos) {
 				if (partidoCol.getEquipo1().getNombre(
@@ -127,6 +136,7 @@ public class EurocopaMain {
 								).equals(equipo2.getNombre())) {
 					
 					partido = partidoCol;
+					
 					
 				}
 			}
@@ -144,12 +154,51 @@ public class EurocopaMain {
 				equipo = equipo1;
 				resultado = EnumResultado.PERDEDOR;
 			}
-			puntosid += lineasPronostico.puntos();
+			
+			Pronostico prona  = new Pronostico(idpartic, partido, equipo, resultado);
+			pron.add(prona);
+							
+		}
+		
+	}
+	for(int i=0; i<pron.size(); i++) {
+		for (int j=0; j<partic.size(); j++) { 
+	/*		System.out.println(pron.size() + " " +pron.get(i).puntos() + " " +
+					pron.get(i).getParticipante() + " " + pron.get(i).getResultado());*/
+			
+			if(partic.get(j).getidParticipante().equals(pron.get(i).getParticipante())) { 
+				int sum = partic.get(j).getIdPuntos() + pron.get(i).puntos();
+				partic.get(j).setIdPuntos(sum);
+			}
+				
 		}
 	}
+	
+	/*String nombreParticipante = campos[5];
+	if(puntosParticipante.containsKey(
+			nombreParticipante)) {
+		puntosParticipante.put(nombreParticipante,
+			puntosParticipante.get(
+					nombreParticipante)
+			+
+			pronostico.puntos()
+			)	;
+	} else {
+		puntosParticipante.put(nombreParticipante,
+				pronostico.puntos());*/
 
 	// mostrar los puntos
-	System.out.println("Los puntos obtenidos por el usuario fueron: " + puntosid);
+	
+	for (int j=0; j<partic.size(); j++) { 
+		System.out.println("Los puntos obtenidos por " +  partic.get(j).getNombre()+ " " +
+				partic.get(j).getApellido() + " (" + partic.get(j).getidParticipante() + ") fueron: " + partic.get(j).getIdPuntos());
+		 
+		}
+	
+	
+
+	}
+
 
 	
 	
@@ -184,6 +233,5 @@ public class EurocopaMain {
 	}*/
 
     }
-}
 
 	
