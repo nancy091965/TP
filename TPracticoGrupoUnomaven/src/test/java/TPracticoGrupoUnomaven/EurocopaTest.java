@@ -31,7 +31,7 @@ public class EurocopaTest {
 		partido.setGolesEq1(5);
 		partido.setGolesEq2(0);
 		
-		assertEquals("GANADOR: El mejor de Argentina", partido.resultado(equipo1) + ": " + equipo1.getDescripcion());
+		assertEquals("GANADOR: Boca Juniors El mejor de Argentina", partido.resultado(equipo1) + ": " + partido.getEquipo1().getNombre() + " " + equipo1.getDescripcion());
 		
 	}
 	
